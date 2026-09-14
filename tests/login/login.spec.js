@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test'
-import commonurl from '../utils/commomurl.json'
-import {login} from '../testpom/login.js'
-import data from '../testdata/login.json'
+import commonurl from '../../utils/commomurl.json'
+import {login} from '../../testpom/login.js'
+import data from '../../testdata/login.json'
 
 test('Login test',async({page})=>{
 
@@ -15,9 +15,9 @@ test('Login test',async({page})=>{
 
     const log = new login(page);
 
-    await page.locator('[name="username"]').fill(unam);
-    await page.locator('[name="password"]').fill(pas);
-    await page.locator('[type="submit"]').click();
+    await log.iusr(unam);
+    await log.ipas(pas);
+    await log.icl();
 
      await page.waitForTimeout(10000)
     page.context().storageState({path:'session.json'})

@@ -1,4 +1,4 @@
-export class login{
+export class login {
 
     unamtxt
     pastxt
@@ -15,11 +15,11 @@ export class login{
         await this.unamtxt.fill(unam)
         }
 
-     async ipas(ps){
-        await this.pastxt.fill(ps)
+     async ipas(pas){
+        await this.pastxt.fill(pas)
         }
    
-     async icl(clk){
-        await this.logclk.click(icl)
-        }      
+     async icl(){
+        await this.logclk.click();
+        }
 }
