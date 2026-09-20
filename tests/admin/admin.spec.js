@@ -18,24 +18,33 @@ test('Admin scenario', async ({page}) => {
     const add = page.getByRole('button', { name: 'Add' })
     await expect(add).toBeVisible()
     await add.click()
-     await page.waitForTimeout(10000)
+    await page.waitForTimeout(10000)
 
- //   const enam = data[0].empnam;
+
+    // using the locator for the dropdown and selecting the option
+      const userRoleDropdown = page.locator('.oxd-input-group:has(label:text("User Role")) .oxd-select-text');
+       await userRoleDropdown.click();
+       await page.getByRole('option', { name: 'Admin' }).click();
+
+      const statusDropdown = page.locator('.oxd-input-group:has(label:text("Status")) .oxd-select-text');
+       await statusDropdown.click();
+       await page.getByRole('option', { name: 'Enabled' }).click();
+
+
+    const enam = data[0].empnam;
     const usenam = data[0].usenam;
     const pas = data[0].password;
     const adcps = data[0].confirmPassword;
 
     const adm = new admin(page);
 
-  //   await adm.empnam.fill(enam);
+     await adm.selectFromAutocomplete(adm.empnam, enam , 'Orange  Test');
      await adm.usrnam.fill(usenam);
      await adm.paswr.fill(pas);
      await adm.cpasr.fill(adcps);
      await adm.subm();
      await page.waitForTimeout(10000)
     
-})
-
-
+  })
 
 })

@@ -19,7 +19,7 @@ test('Login test',async({page})=>{
     await log.ipas(pas);
     await log.icl();
 
-     await page.waitForTimeout(10000)
+     await page.waitForTimeout(2000)
     page.context().storageState({path:'session.json'})
     
   }

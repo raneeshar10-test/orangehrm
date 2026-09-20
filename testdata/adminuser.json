@@ -3,8 +3,8 @@
     {
         "empnam": "test",
         "usenam": "raneesh",
-        "password": "pssaword",
-        "confirmPassword": "pssaword"
+        "password": "pssaword@1",
+        "confirmPassword": "pssaword@1"
 
     }
 ]
