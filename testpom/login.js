@@ -1,25 +1,26 @@
-export class login{
+export class LoginPage {
+  constructor(page) {
+    this.page = page;
+    this.usernameInput = page.locator('[name="username"]');
+    this.passwordInput = page.locator('[name="password"]');
+    this.loginButton = page.locator('[type="submit"]');
+  }
 
-    unamtxt
-    pastxt
-    logclk
+  async enterUsername(username) {
+    await this.usernameInput.fill(username);
+  }
 
-    constructor(page){
+  async enterPassword(password) {
+    await this.passwordInput.fill(password);
+  }
 
-        this.unamtxt = page.locator('[name="username"]');
-        this.pastxt = page.locator('[name="password"]');
-        this.logclk = page.locator('[type="submit"]');
-    }
+  async clickLogin() {
+    await this.loginButton.click();
+  }
 
-    async iusr(unam){
-        await this.unamtxt.fill(unam)
-        }
-
-     async ipas(ps){
-        await this.pastxt.fill(ps)
-        }
-   
-     async icl(clk){
-        await this.logclk.click(icl)
-        }      
+  async login(username, password) {
+    await this.enterUsername(username);
+    await this.enterPassword(password);
+    await this.clickLogin();
+  }
 }
