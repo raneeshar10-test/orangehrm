@@ -20,8 +20,9 @@ export class AdminPage {
     await inputLocator.fill(text);
 
     const option = this.page.getByRole('option', { name: optionText }).first();
-    await option.waitFor({ state: 'visible' });
+    await option.waitFor({ state: 'visible', timeout: 15000 });
     await option.click();
+    await inputLocator.waitFor({ state: 'visible' });
   }
 
   async selectUserRole(roleName) {
@@ -35,7 +36,7 @@ export class AdminPage {
   }
 
   async fillUserDetails({ employeeName, username, password, confirmPassword }) {
-    await this.selectFromAutocomplete(this.employeeNameInput, employeeName, 'Orange  Test');
+    await this.selectFromAutocomplete(this.employeeNameInput, employeeName, employeeName);
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.confirmPasswordInput.fill(confirmPassword);

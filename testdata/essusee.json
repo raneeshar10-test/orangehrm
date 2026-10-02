@@ -1,0 +1,58 @@
+[
+  {
+    "scenario": "username empty",
+    "empnam": "Ranga Akunuri",
+    "usenam": " ",
+    "password": "pssaword@10",
+    "confirmPassword": "pssaword@10",
+    "expected": "Required"
+  },
+  {
+    "scenario": "confirm password empty",
+    "empnam": "Ranga Akunuri",
+    "usenam": "raneeshown",
+    "password": "pssaword@10",
+    "confirmPassword": " ",
+    "expected": "Passwords do not match"
+  },
+  {
+    "scenario": "password empty",
+    "empnam": "Ranga Akunuri",
+    "usenam": "raneeshown",
+    "password": " ",
+    "confirmPassword": "pssaword@10",
+    "expected": "Required"
+  },
+  {
+    "scenario": "confirm password mismatch",
+    "empnam": "Ranga Akunuri",
+    "usenam": "raneeshown",
+    "password": "pssaword@10",
+    "confirmPassword": "pssaword@1",
+    "expected": "Passwords do not match"
+  },
+  {
+    "scenario": "password mismatch",
+    "empnam": "Ranga Akunuri",
+    "usenam": "raneeshown",
+    "password": "pssaword@1",
+    "confirmPassword": "pssaword@10",
+    "expected": "Passwords do not match"
+  },
+  {
+    "scenario": "correct details already exists",
+    "empnam": "Ranga Akunuri",
+    "usenam": "ranee",
+    "password": "pssaword@10",
+    "confirmPassword": "pssaword@10",
+    "expected": "already exists"
+  },
+  {
+    "scenario": "correct details",
+    "empnam": "Ranga Akunuri",
+    "usenam": "raneeow",
+    "password": "pssaword@10",
+    "confirmPassword": "pssaword@10",
+    "expected": "Successfully Saved"
+  }
+]
